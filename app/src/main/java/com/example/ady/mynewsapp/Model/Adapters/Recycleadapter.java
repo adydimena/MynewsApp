@@ -1,19 +1,18 @@
-package com.example.ady.mynewsapp;
+package com.example.ady.mynewsapp.Model.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
-import com.example.ady.mynewsapp.Newspojo.Article;
 
+import com.example.ady.mynewsapp.Main2Activity;
+import com.example.ady.mynewsapp.Model.NewsPojo.Article;
+import com.example.ady.mynewsapp.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -63,9 +62,11 @@ public class Recycleadapter extends RecyclerView.Adapter<Recycleadapter.ViewHold
         holder.linearlayoutbtnclick.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context,"you have clicked on "+ list.get(position).getTitle(),Toast.LENGTH_LONG).show();
-                Log.d(TAG, "onClick: " + list.get(position).getUrlToImage() );
-                
+                //Toast.makeText(context,"you have clicked on "+ list.get(position).getTitle(),Toast.LENGTH_LONG).show();
+                //Log.d(TAG, "onClick: " + list.get(position).getUrlToImage() );
+                Intent intent = new Intent(context,Main2Activity.class);
+                intent.putExtra("magic",list.get(position).getUrlToImage());
+                context.startActivity(intent);
             }
         });
 

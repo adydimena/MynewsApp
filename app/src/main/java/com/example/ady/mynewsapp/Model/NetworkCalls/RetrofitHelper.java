@@ -1,8 +1,7 @@
-package com.example.ady.mynewsapp;
+package com.example.ady.mynewsapp.Model.NetworkCalls;
 
 
-import com.example.ady.mynewsapp.Newspojo.NewsNow;
-
+import com.example.ady.mynewsapp.Model.NewsPojo.NewsNow;
 
 import retrofit2.Call;
 import retrofit2.Retrofit;
